@@ -8,3 +8,40 @@ red - #ee5253
 
 */
 
+* {
+  border: 1px solid green;
+}
+/*
+body {
+  background-image: url(assets/burger-friends.jpg);
+  background-size: contain;
+} */
+
+header {
+  height: 30px;
+  width: 100%;
+  background-color: #0fb9b1;
+  margin: 0px;
+  padding: 3px;
+  display: inline;
+  float: left;
+}
+
+nav {
+  float: right;
+  display: inline;
+}
+
+form {
+  float: left;
+  clear: both;
+}
+
+.button {
+  border-radius: 5px;
+}
+
+.add-recipe-button {
+  display: flex;
+  justify-content: flex-end;
+}
