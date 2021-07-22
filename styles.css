@@ -61,7 +61,7 @@ red - #ee5253
 body {
   background-image: url(assets/burger-friends.jpg);
   background-size: cover;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 20px;
 }
 
@@ -70,6 +70,7 @@ header {
   background-color: #0fb9b1;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px;
 }
 
@@ -105,13 +106,18 @@ h2 {
   margin-bottom: 10px;
 }
 
+.cookpot {
+  height: 50%;
+  width: 50%;
+}
+
 .asterisk {
   color: red;
 }
 
 .output-box {
   display: flex;
-  align-content: center;
+  align-items: center;
   justify-content: center;
 }
 
