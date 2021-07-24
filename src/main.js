@@ -42,6 +42,12 @@ function displayRandomDish(e) {
   let recommendation = `
     <p class="recommendation">You should make: <span class="random-dish">${randomDish}!</span></p>
   `;
+
+  let currentRecommendation = document.querySelector('.recommendation');
+  if (currentRecommendation) {
+    currentRecommendation.remove();
+  }
+
   output.insertAdjacentHTML('afterbegin', recommendation);
   cookpot.classList.add('hidden')
   clearButton.classList.remove('hidden');

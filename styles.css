@@ -155,10 +155,12 @@ label {
 
 .random-dish {
   font-size: 48pt;
+  font-style: normal;
 }
 
 .random-meal {
   font-size: 24pt;
+  font-style: normal;
 }
 
 button,
