@@ -6,6 +6,7 @@ let randomDessertsIndex = getRandomIndex(desserts);
 // HTML Elements
 let form = document.querySelector('.js-form');
 let output = document.querySelector('.js-output-box');
+let letsCookButton = document.querySelector('.js-lets-cook-button')
 
 // Event Listeners
 form.addEventListener('submit', displayRandomDish);
@@ -31,11 +32,13 @@ function displayRandomDish(e) {
       }
     }
   }
+
   let recommendation = `
-    <p>You should make: </p>
-    <p>${randomDish}</p>
+    <p class="recommendation">You should make: </p>
+    <p class="random-dish">${randomDish}!</p>
   `;
   output.innerHTML = recommendation;
+  letsCookButton.classList.add('visited');
 }
 
 // Helper Functions
