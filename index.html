@@ -1,10 +1,40 @@
 <html>
   <head>
+    <title>What's for Dinner?</title>
     <link rel="stylesheet" href="./styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   </head>
   <body>
-    
+    <header>
+      <h1>What's for Dinner?</h1>
+      <button class='button add-recipe-button'>Add a Recipe</button>
+    </header>
+    <section>
+      <form class="js-form">
+        <h2>What are you looking for?<span class="asterisk">*</span></h1>
+        <div class="dish-option">
+          <input type="radio" id="dishType1" name="dishType" value="side" />
+          <label for="dishType1">Side</label>
+        </div>
+        <div class="dish-option">
+          <input type="radio" id="dishType2" name="dishType" value="main" />
+          <label for="dishType2">Main Dish</label>
+        </div>
+        <div class="dish-option">
+          <input type="radio" id="dishType3" name="dishType" value="dessert" />
+          <label for="dishType3">Dessert</label>
+        </div>
+        <div class="dish-option">
+          <input type="radio" id="dishType4" name="dishType" value="meal" />
+          <label for="dishType4">Entire Meal</label>
+        </div>
+        <input type="submit" value="LET'S COOK!" class="button lets-cook-button js-lets-cook-button" />
+      </form>
+      <div class="output-box js-output-box">
+        <img src="./assets/cookpot.svg" class="cookpot">
+      </div>
+    </section>
   </body>
-  <script type="text/javascript" src="main.js"></script>
+  <script src="./src/data.js"></script>
+  <script src="./src/main.js"></script>
 </html>
