@@ -156,6 +156,7 @@ label {
 .random-dish {
   font-size: 48pt;
   font-style: normal;
+  display: block;
 }
 
 .random-meal {
