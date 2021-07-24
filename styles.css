@@ -83,7 +83,6 @@ h1 {
 }
 
 section {
-  clear: left;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -158,6 +157,10 @@ label {
   font-size: 48pt;
 }
 
+.random-meal {
+  font-size: 24pt;
+}
+
 button,
 .lets-cook-button {
   border-radius: 7.5px;
@@ -179,7 +182,11 @@ button,
   margin-left: 5px;
 }
 
-.clear-button {
+/* .clear-button {
   flex-direction: row;
   align-items: flex-end;
+} */
+
+.hidden {
+  display: none;
 }
