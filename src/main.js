@@ -36,6 +36,7 @@ function displayRandomDish(e) {
   let recommendation = `
     <p class="recommendation">You should make: </p>
     <p class="random-dish">${randomDish}!</p>
+    <button class="clear-button js-clear-button">Clear</button>
   `;
   output.innerHTML = recommendation;
   letsCookButton.classList.add('visited');
@@ -45,3 +46,6 @@ function displayRandomDish(e) {
 function getRandomIndex(array) {
   return Math.floor(Math.random() * (array.length + 1))
 }
+
+
+//

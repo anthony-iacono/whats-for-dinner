@@ -140,9 +140,9 @@ label {
   width: 45%;
 }
 
-button:hover {
+/* button:hover {
   border: 10px solid #2F75FF;
-}
+} */
 
 .asterisk {
   color: red;
@@ -177,4 +177,9 @@ button,
   height: 50px;
   margin-top: 20px;
   margin-left: 5px;
+}
+
+.clear-button {
+  flex-direction: row;
+  align-items: flex-end;
 }
