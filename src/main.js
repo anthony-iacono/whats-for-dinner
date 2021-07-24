@@ -1,24 +1,10 @@
-// When a user selects a dish option (don’t worry about “Entire Meal”) and then clicks the “Let’s Cook!” button, the user sees a random dish from the list of possible dishes for that category
-
-// [x] create random index helper function
-
-// [x] assign variables storing random index from each array
-
-// [x] store let's cook button with query Selector
-
-// [x] store output div with querySelector
-
-// [x] add eventListener to let's cook button
-
-// [x] add event handler that clears output divs html and injects a template literal with random dish from selected array using random index
-
 // Variables
 let randomSidesIndex = getRandomIndex(sides);
 let randomMainsIndex = getRandomIndex(mains);
 let randomDessertsIndex = getRandomIndex(desserts);
 
 // HTML Elements
-let form = document.querySelector('form');
+let form = document.querySelector('.js-form');
 let output = document.querySelector('.js-output-box');
 
 // Event Listeners
@@ -29,23 +15,26 @@ function displayRandomDish(e) {
   e.preventDefault();
 
   let radioButtons = document.getElementsByName('dishType');
-  let recommendation;
+  let randomDish;
 
   for (let i = 0; i < radioButtons.length; i++) {
     if (radioButtons[i].checked) {
       if (radioButtons[i].value === 'side') {
-        recommendation = `<p>You should make:\n${sides[randomSidesIndex]}</p>`;
+        randomDish = sides[randomSidesIndex];
         break;
       } else if (radioButtons[i].value === 'main') {
-        recommendation = `<p>You should make:\n${mains[randomMainsIndex]}</p>`;
+        randomDish = mains[randomMainsIndex];
         break;
       } else if (radioButtons[i].value === 'dessert') {
-        recommendation = `<p>You should make:\n${desserts[randomDessertsIndex]}</p>`;
+        randomDish = desserts[randomDessertsIndex];
         break;
       }
     }
   }
-
+  let recommendation = `
+    <p>You should make: </p>
+    <p>${randomDish}</p>
+  `;
   output.innerHTML = recommendation;
 }
 
