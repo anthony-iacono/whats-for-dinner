@@ -1,14 +1,15 @@
+// HTML Elements
+const form = document.querySelector('.js-form');
+const output = document.querySelector('.js-output-box');
+const cookpot = document.querySelector('.js-cookpot');
+const letsCookButton = document.querySelector('.js-lets-cook-button');
+const clearButton = document.querySelector('.js-clear-button');
+
 // Variables
 let randomSidesIndex = getRandomIndex(sides);
 let randomMainsIndex = getRandomIndex(mains);
 let randomDessertsIndex = getRandomIndex(desserts);
-
-// HTML Elements
-let form = document.querySelector('.js-form');
-let output = document.querySelector('.js-output-box');
-let cookpot = document.querySelector('.js-cookpot')
-let letsCookButton = document.querySelector('.js-lets-cook-button')
-let clearButton = document.querySelector('.js-clear-button')
+let randomDish;
 
 // Event Listeners
 form.addEventListener('submit', displayRandomDish);
@@ -17,10 +18,7 @@ clearButton.addEventListener('click', clearOutput);
 // Event Handlers
 function displayRandomDish(e) {
   e.preventDefault();
-
   let radioButtons = document.getElementsByName('dishType');
-  let randomDish;
-
   for (let i = 0; i < radioButtons.length; i++) {
     if (radioButtons[i].checked) {
       if (radioButtons[i].value === 'side') {
@@ -33,28 +31,17 @@ function displayRandomDish(e) {
         randomDish = desserts[randomDessertsIndex];
         break;
       } else if (radioButtons[i].value === 'meal') {
-        randomDish = `${mains[randomMainsIndex]} with a side of ${sides[randomSidesIndex]} and ${desserts[randomDessertsIndex]} for dessert`
+        randomDish = `${mains[randomMainsIndex]} with a side of ${sides[randomSidesIndex]} and ${desserts[randomDessertsIndex]} for dessert`;
         break;
       }
     }
   }
 
-  let recommendation = `
-    <p class="recommendation">You should make: <span class="random-dish">${randomDish}!</span></p>
-  `;
-
-  let currentRecommendation = document.querySelector('.recommendation');
-  if (currentRecommendation) {
-    currentRecommendation.remove();
-  }
-
-  output.insertAdjacentHTML('afterbegin', recommendation);
-  cookpot.classList.add('hidden')
-  clearButton.classList.remove('hidden');
+  displayRecommendation()
 }
 
 function clearOutput() {
-  let currentRecommendation = document.querySelector('.recommendation');
+  currentRecommendation = document.querySelector('.recommendation');
   currentRecommendation.remove();
   cookpot.classList.remove('hidden');
   clearButton.classList.add('hidden');
@@ -65,9 +52,16 @@ function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length)
 }
 
+function displayRecommendation() {
+  let currentRecommendation = document.querySelector('.js-recommendation');
+  if (currentRecommendation) {
+    currentRecommendation.remove();
+  }
 
-// user selects entire meal
-// user clicks let's cook button
-// click event listener fires off handler
-// clear output box
-// add html string interpolating random main, side, and desserts
+  let newRecommendation = `
+    <p class="recommendation js-recommendation">You should make: <span class="random-dish">${randomDish}!</span></p>
+  `;
+  output.insertAdjacentHTML('afterbegin', newRecommendation);
+  cookpot.classList.add('hidden')
+  clearButton.classList.remove('hidden');
+}

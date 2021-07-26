@@ -139,10 +139,6 @@ label {
   width: 45%;
 }
 
-/* button:hover {
-  border: 10px solid #2F75FF;
-} */
-
 .asterisk {
   color: red;
 }
@@ -184,11 +180,6 @@ button,
   margin-top: 20px;
   margin-left: 5px;
 }
-
-/* .clear-button {
-  flex-direction: row;
-  align-items: flex-end;
-} */
 
 .hidden {
   display: none;
