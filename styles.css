@@ -166,6 +166,7 @@ button,
   text-transform: uppercase;
   border: none;
   font-size: 15pt;
+  cursor: pointer;
 }
 
 .add-recipe-button {

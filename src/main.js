@@ -6,9 +6,6 @@ const letsCookButton = document.querySelector('.js-lets-cook-button');
 const clearButton = document.querySelector('.js-clear-button');
 
 // Variables
-let randomSidesIndex = getRandomIndex(sides);
-let randomMainsIndex = getRandomIndex(mains);
-let randomDessertsIndex = getRandomIndex(desserts);
 let randomDish;
 
 // Event Listeners
@@ -16,9 +13,12 @@ form.addEventListener('submit', displayRandomDish);
 clearButton.addEventListener('click', clearOutput);
 
 // Event Handlers
-function displayRandomDish(e) {
-  e.preventDefault();
+function displayRandomDish(event) {
+  event.preventDefault();
   let radioButtons = document.getElementsByName('dishType');
+  let randomSidesIndex = getRandomIndex(sides);
+  let randomMainsIndex = getRandomIndex(mains);
+  let randomDessertsIndex = getRandomIndex(desserts);
   for (let i = 0; i < radioButtons.length; i++) {
     if (radioButtons[i].checked) {
       if (radioButtons[i].value === 'side') {
